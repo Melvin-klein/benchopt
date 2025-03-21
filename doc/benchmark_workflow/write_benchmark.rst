@@ -53,10 +53,10 @@ An objective class should define 4 methods:
   of the iterate, here called ``x``. This method should take only one parameter,
   the output returned by the solver. All other parameters should be stored
   in the class with the ``set_data`` method. The ``compute`` function should return
-  a float (understood as the objective value) or a dictionary. If a dictionary
+  a float (understood as the objective value), a dictionary or a list of dictionnaries. If a dictionary
   is returned it should contain a key called ``value`` (the objective value) and all other keys
   should have ``float`` values allowing to track more than one value
-  of interest (e.g. train and test errors).
+  of interest (e.g. train and test errors). In a list of dictionnaries, each one must be formatted as described just before.
 - ``get_objective()``: returns a dictionary to be passed
   to the ``set_objective`` methods of solvers_.
 
