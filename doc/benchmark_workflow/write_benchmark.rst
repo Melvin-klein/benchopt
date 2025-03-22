@@ -53,9 +53,14 @@ An objective class should define 4 methods:
   of the iterate, here called ``x``. This method should take only one parameter,
   the output returned by the solver. All other parameters should be stored
   in the class with the ``set_data`` method. The ``compute`` function should return
-  a float (understood as the objective value), a dictionary or a list of dictionnaries. If a dictionary
-  is returned it should contain a key called ``value`` (the objective value) and all other keys
-  should have ``float`` values allowing to track more than one value
+  a float (understood as the objective value), a dictionary, or a list of dictionaries. In the final
+  ``DataFrame`` stored by ``benchopt``, each row corresponds to the keys of the returned dictionary,
+  augmented with metadata like the time or the solver and dataset names. Lists of dictionaries
+  thus allow to create multiple rows in the ``DataFrame`` in a single evaluation. If a single value ``v``
+  is returned, it is considered as returning ``{"value": v}``.
+  Note that when using a stopping criterion different than ``SingleRunCriterion`` (or ``strategy = "run_once"``),
+  the returned dictionary should contain a key called ``value`` allowing to track the convergence status
+  of the run. The name of this value can be changed in the criterion with the ``key_to_monitor`` parameter.
   of interest (e.g. train and test errors). In a list of dictionnaries, each one must be formatted as described just before.
 - ``get_objective()``: returns a dictionary to be passed
   to the ``set_objective`` methods of solvers_.
