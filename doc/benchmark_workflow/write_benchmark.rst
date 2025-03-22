@@ -61,7 +61,6 @@ An objective class should define 4 methods:
   Note that when using a stopping criterion different than ``SingleRunCriterion`` (or ``strategy = "run_once"``),
   the returned dictionary should contain a key called ``value`` allowing to track the convergence status
   of the run. The name of this value can be changed in the criterion with the ``key_to_monitor`` parameter.
-  of interest (e.g. train and test errors). In a list of dictionnaries, each one must be formatted as described just before.
 - ``get_objective()``: returns a dictionary to be passed
   to the ``set_objective`` methods of solvers_.
 
