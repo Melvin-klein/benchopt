@@ -24,9 +24,7 @@ The DataFrame contains the following columns:
 - ``p_obj_p``: the value of the objective's parameter ``p``.
 - ``p_solver_p``: the value of the solver's parameter ``p``.
 - ``p_dateset_p``: the value of the dataset's parameter ``p``.
-- ``time``: the time taken to run the solver until this point of the performance curve. 
-  If your ``evaluate_result`` function returns a list of dictionaries,
-  you can retrieve the list by grouping by ``time``.
+- ``time``: the time taken to run the solver until this point of the performance curve.
 - ``stop_val``: the number of iterations or the tolerance reached by the solver.
 - ``idx_rep``: If multiple repetitions are run for each solver with ``--n-rep``,
   this column contains the repetition number.
